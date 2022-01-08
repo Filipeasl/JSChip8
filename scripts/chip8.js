@@ -7,7 +7,8 @@ const renderer = new Renderer(10);
 const keyboard = new Keyboard();
 const speaker = new Speaker();
 const cpu = new CPU(renderer, keyboard, speaker);
-
+const urlParams = new URLSearchParams(window.location.search);
+const rom = urlParams.get("rom");
 let loop;
 
 let fps = 60, fpsInterval, startTime, now, then, elapsed;
@@ -18,7 +19,7 @@ function init() {
 	startTime = then;
 
 	cpu.loadSpritesIntoMemory();
-	cpu.loadRom('BLINKY');
+	cpu.loadRom(rom);
 	loop = requestAnimationFrame(step);
 }
 

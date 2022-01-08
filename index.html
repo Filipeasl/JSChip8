@@ -3,9 +3,120 @@
     <head>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <canvas></canvas>
+    <style>
+        
+        .grid {
+            max-width: 400px;
+            margin: 0 auto;
+            display: grid;
+        }
 
+        .item {
+            margin: 5px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .grid-template-columns {
+	        grid-template-columns: 200px 200px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 10%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <body>
+        <br/>
+        <center><h3>CHIP-8 Javascript emulator</h3><br/><a href="https://github.com/Filipeasl/JSChip8" target="_blank">GitHub</a></center>
+        <br/>
+        <center><canvas></canvas></center>
+        <center>
+        <a href="/index.html?rom=BLINKY"><button>BLINKY</button></a>
+        <a href="/index.html?rom=BLITZ"><button>BLITZ</button></a>
+        </center>
+        <center>
+        <br/>
+            
+
+        <section class="container grid grid-template-columns">
+            <div class="item">
+                <center>
+                    CHIP-8 Keyboard<br/><br/>
+                    <table> 
+                        <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>C</td>
+                        </tr>
+                        <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>D</td>
+                        </tr>
+                        <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>E</td>
+                        </tr>
+                        <tr>
+                        <td>A</td>
+                        <td>0</td>
+                        <td>B</td>
+                        <td>F</td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+            <div class="item">
+                <center>
+                    Interpreter Keyboard<br/>
+                    <table>
+                        <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        </tr>
+                        <tr>
+                        <td>Q</td>
+                        <td>W</td>
+                        <td>E</td>
+                        <td>R</td>
+                        </tr>
+                        <tr>
+                        <td>A</td>
+                        <td>S</td>
+                        <td>D</td>
+                        <td>F</td>
+                        </tr>
+                        <tr>
+                        <td>Z</td>
+                        <td>X</td>
+                        <td>C</td>
+                        <td>V</td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+        </section>
+
+        </center>
+        <br/>
         <script type="module" src="scripts/chip8.js"></script>
     </body>
 </html>
