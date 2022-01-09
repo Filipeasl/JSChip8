@@ -1,3 +1,9 @@
-# JSChip8
-Javacript CHIP-8 emulator<br/>
-<a href="http://filipesdevlogs.xyz/JSCHIP8/index.html?rom=BLINKY" target="_blank">Live Demo</a>
+JSChip8
+====================
+
+CHIP-8 emulator written in javscript
+
+[Live Demo](http://filipesdevlogs.xyz/JSCHIP8/Capturar.PNG)
+
+
+
