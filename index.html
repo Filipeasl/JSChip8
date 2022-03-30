@@ -1,3 +1,9 @@
+<!--
+    - This is a CHIP-8 Javascript emulator, an emulation of the CHIP-8 interpreter written in Javascript.
+    The emulation is completely rendered inside the first canvas tag of this document.
+    - This simply the logic from the reference of CHIP-8 written in javascript, which you canfind below:
+    http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.2
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +13,6 @@
     <link rel="stylesheet" href="index.css">
     <title>CHIP-8 Javascript emulator</title>
 </head>
-<!--
-    This is a CHIP-8 Javascript emulator, an emulation of the CHIP-8 interpreter written in Javascript.
-    The emulation is completely rendered inside the first canvas tag of this document.
--->
 <body>
     <br/>
         <div class="center">
@@ -99,7 +101,10 @@
         </div>
     <br/>
 
-    <!-- Actual game logic -->
+    <!--
+        Actual game logic
+        Start from chip8.js inside the scripts folder
+    -->
     <script type="module" src="scripts/chip8.js"></script>
 </body>
 </html>
