@@ -1,124 +1,105 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CHIP-8 Javascript emulator</title>
+</head>
+<!--
+    This is a CHIP-8 Javascript emulator, an emulation of the CHIP-8 interpreter written in Javascript.
+    The emulation is completely rendered inside the first canvas tag of this document.
+-->
+<body>
+    <br/>
+        <div class="center">
+            <h3>CHIP-8 Javascript emulator</h3><br/><a href="https://github.com/Filipeasl/JSChip8" target="_blank">GitHub</a>
+        </div>
+        <br/>
+
+        <!-- Canvas -->
+        <div class="center">
+            <canvas></canvas>
+        </div>
+
+        <!-- Roms links buttons -->
+        <div class="center">
+            <a href="./index.html?rom=BLINKY"><button>BLINKY</button></a>
+            <a href="./index.html?rom=BLITZ"><button>BLITZ</button></a>
+        </div>
+        <br/>
         
-        .grid {
-            max-width: 400px;
-            margin: 0 auto;
-            display: grid;
-        }
+        <!-- Controls manual table -->
+        <div class="center">
+            <section class="container grid grid-template-columns">
+                <div class="item">
+                    <div class="center">
+                        CHIP-8 Keyboard<br/><br/>
+                        <table> 
+                            <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>C</td>
+                            </tr>
+                            <tr>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>D</td>
+                            </tr>
+                            <tr>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>E</td>
+                            </tr>
+                            <tr>
+                            <td>A</td>
+                            <td>0</td>
+                            <td>B</td>
+                            <td>F</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="center">
+                        Interpreter Keyboard<br/>
+                        <table>
+                            <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            </tr>
+                            <tr>
+                            <td>Q</td>
+                            <td>W</td>
+                            <td>E</td>
+                            <td>R</td>
+                            </tr>
+                            <tr>
+                            <td>A</td>
+                            <td>S</td>
+                            <td>D</td>
+                            <td>F</td>
+                            </tr>
+                            <tr>
+                            <td>Z</td>
+                            <td>X</td>
+                            <td>C</td>
+                            <td>V</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    <br/>
 
-        .item {
-            margin: 5px;
-            text-align: center;
-            font-size: 1.5em;
-        }
-
-        .grid-template-columns {
-	        grid-template-columns: 200px 200px;
-        }
-
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 10%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
-    <body>
-        <br/>
-        <center><h3>CHIP-8 Javascript emulator</h3><br/><a href="https://github.com/Filipeasl/JSChip8" target="_blank">GitHub</a></center>
-        <br/>
-        <center><canvas></canvas></center>
-        <center>
-        <!-- Roms links -->
-        <a href="./index.html?rom=BLINKY"><button>BLINKY</button></a>
-        <a href="./index.html?rom=BLITZ"><button>BLITZ</button></a>
-        </center>
-        <center>
-        <br/>
-            
-        <!-- Controls manual -->
-        <section class="container grid grid-template-columns">
-            <div class="item">
-                <center>
-                    CHIP-8 Keyboard<br/><br/>
-                    <table> 
-                        <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>C</td>
-                        </tr>
-                        <tr>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>D</td>
-                        </tr>
-                        <tr>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>E</td>
-                        </tr>
-                        <tr>
-                        <td>A</td>
-                        <td>0</td>
-                        <td>B</td>
-                        <td>F</td>
-                        </tr>
-                    </table>
-                </center>
-            </div>
-            <div class="item">
-                <center>
-                    Interpreter Keyboard<br/>
-                    <table>
-                        <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        </tr>
-                        <tr>
-                        <td>Q</td>
-                        <td>W</td>
-                        <td>E</td>
-                        <td>R</td>
-                        </tr>
-                        <tr>
-                        <td>A</td>
-                        <td>S</td>
-                        <td>D</td>
-                        <td>F</td>
-                        </tr>
-                        <tr>
-                        <td>Z</td>
-                        <td>X</td>
-                        <td>C</td>
-                        <td>V</td>
-                        </tr>
-                    </table>
-                </center>
-            </div>
-        </section>
-
-        </center>
-        <br/>
-        <!-- Actual game logic -->
-        <script type="module" src="scripts/chip8.js"></script>
-    </body>
+    <!-- Actual game logic -->
+    <script type="module" src="scripts/chip8.js"></script>
+</body>
 </html>
