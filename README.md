@@ -1,7 +1,7 @@
 JSChip8
 ====================
 
-![alt text](http://filipesdevlogs.xyz/JSCHIP8/Capturar.PNG)
+![alt text](https://raw.githubusercontent.com/Filipeasl/JSChip8/main/screenshot.PNG)
 
 CHIP-8 emulator written in javscript
 
