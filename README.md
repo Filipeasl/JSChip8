@@ -5,7 +5,7 @@ JSChip8
 
 CHIP-8 emulator written in javscript
 
-[Live Demo](http://filipesdevlogs.xyz/JSCHIP8/index.html?rom=BLINKY)
+[Live Demo](https://filipeasl.github.io/JSChip8/)
 
 
 
